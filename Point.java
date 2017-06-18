@@ -1,5 +1,3 @@
-package bluenile.rest.jw;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -32,18 +30,18 @@ public class Point {
 				point_map.put("g", Integer.valueOf(2));
 				point_map.put("b", Integer.valueOf(3));
 				point_map.put("c", Integer.valueOf(3));
-			    point_map.put("m", Integer.valueOf(3));
-			    point_map.put("p", Integer.valueOf(3));
-			    point_map.put("f", Integer.valueOf(4));
-			    point_map.put("h", Integer.valueOf(4));
-			    point_map.put("v", Integer.valueOf(4));
-			    point_map.put("w", Integer.valueOf(4));
-			    point_map.put("y", Integer.valueOf(4));
-			    point_map.put("k", Integer.valueOf(5));
-			    point_map.put("j", Integer.valueOf(8));
-			    point_map.put("x", Integer.valueOf(8));
-			    point_map.put("q", Integer.valueOf(10));
-			    point_map.put("z", Integer.valueOf(10));
+			    	point_map.put("m", Integer.valueOf(3));
+			    	point_map.put("p", Integer.valueOf(3));
+			    	point_map.put("f", Integer.valueOf(4));
+			    	point_map.put("h", Integer.valueOf(4));
+			    	point_map.put("v", Integer.valueOf(4));
+			    	point_map.put("w", Integer.valueOf(4));
+			    	point_map.put("y", Integer.valueOf(4));
+			    	point_map.put("k", Integer.valueOf(5));
+			    	point_map.put("j", Integer.valueOf(8));
+			    	point_map.put("x", Integer.valueOf(8));
+			    	point_map.put("q", Integer.valueOf(10));
+			    	point_map.put("z", Integer.valueOf(10));
 	}
 	 /**
      * Method returning the total score
@@ -80,7 +78,6 @@ public class Point {
 	       // Defined Custom Comparator here
 	       Collections.sort(list, new Comparator() {
 	            public int compare(Object o1, Object o2) {
-	        
 	               return ((Comparable) ((Map.Entry) (o2)).getValue())
 	 	                  .compareTo(((Map.Entry) (o1)).getValue());
 	            }
@@ -117,6 +114,6 @@ public class Point {
 	           Map.Entry me = (Map.Entry)iterator.next();
 	           result_list.add((String)(me.getKey()));
 	      }
-		return result_list;
+	    return result_list;
 	}
 }
