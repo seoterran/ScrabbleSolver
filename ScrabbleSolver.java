@@ -1,4 +1,3 @@
-package bluenile.rest.jw;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -72,16 +71,16 @@ public class ScrabbleSolver {
 		  //System.out.println("allSubstrings: "+allSubstrings.size() +"/"+allSubstrings);
 		  
 		  for (String subString : allSubstrings) {
-			 if(params.contains(subString)){
-			 	 JSONlist.add(subString);
+		       if(params.contains(subString)){
+			     JSONlist.add(subString);
 			     //System.out.println("Combinations: "+ permutation);
-			 }
-		}
+		       }
+		  }
 		 
 		 sortedJSONlist= new Point().sortByScore(JSONlist);
 		 String json=new JSONArray(sortedJSONlist).toString();
 		 
-	     return Response.status(200).entity(json).build();
+	         return Response.status(200).entity(json).build();
 		
 	  }
 }
