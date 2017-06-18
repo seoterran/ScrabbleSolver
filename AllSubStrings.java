@@ -12,7 +12,6 @@ public class AllSubStrings {
 	//HashSet<String> com_str;
 	
 	public AllSubStrings(String str){
-		
 		com_str = new ArrayList<>();
 		//com_str = new HashSet<>();
 		allSubStrings(str);
@@ -50,23 +49,19 @@ public class AllSubStrings {
 	 * @return void
 	 */
      private void StringCombination(char arr[], char data[],int start,
-                                int end, int index, int r)
-    {
+                                int end, int index, int r){
     	 
-        if (index == r)
-        {
-        	String temp="";
-            for (int j=0; j<r; j++){
+        if (index == r){
+            String temp="";
+            for (int j=0; j<r; j++)
             	temp+=Character.toString(data[j]);
-            }
             
             StringPermutation(temp);
             
             return;
         }
  
-        for (int i=start; i<=end && end-i+1 >= r-index; i++)
-        {
+        for (int i=start; i<=end && end-i+1 >= r-index; i++){
             data[index] = arr[i];
             StringCombination(arr, data, i+1, end, index+1, r);
         }
@@ -76,8 +71,7 @@ public class AllSubStrings {
       * Method finding all permutations of the input string
       * @return void
       */
-     private void StringPermutation(String input)
-     {
+     private void StringPermutation(String input){
          StringPermutation("", input);
      }
      
@@ -85,16 +79,11 @@ public class AllSubStrings {
       *  Method finding all permutations of the input string
       *  @return void
       */
-     private void StringPermutation(String permutation, String input)
-     {    
-         if(input.length() == 0)
-         {
-        	 com_str.add(permutation);//add to the substrings list
-         }
-         else
-         {
-             for (int i = 0; i < input.length(); i++)
-             {    
+     private void StringPermutation(String permutation, String input){    
+         if(input.length() == 0){
+              com_str.add(permutation);//add to the substrings list
+         }else{
+             for (int i = 0; i < input.length(); i++){    
                  StringPermutation(permutation+input.charAt(i), input.substring(0, i)+input.substring(i+1, input.length()));
              }
          }
